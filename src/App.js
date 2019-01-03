@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import ReactDom from 'react-dom'
 import { Router } from '@reach/router'
 
-import Main from './routes/Main'
-import JobsList from './routes/JobsList'
+import Main from './Main'
+import JobsList from './JobsList'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
