@@ -1,6 +1,6 @@
 {
-  "name": "developer-jobs-on-reddit",
-  "version": "0.0.1",
+  "name": "jobs-on-reddit",
+  "version": "0.0.2",
   "description": "A page to show all reddit [HIRING] jobs",
   "main": "index.js",
   "scripts": {
