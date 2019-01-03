@@ -1,0 +1,44 @@
+{
+  "name": "developer-jobs-on-reddit",
+  "version": "0.0.1",
+  "description": "A page to show all reddit [HIRING] jobs",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "dev": "parcel src/index.html"
+  },
+  "keywords": [
+    "react",
+    "reddit"
+  ],
+  "author": "Joseph Chambers <joseph@michael-chambers.com>",
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@reach/router": "^1.2.1",
+    "bootstrap": "^4.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router-dom": "^4.3.1",
+    "reactstrap": "^7.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-plugin-transform-react-jsx-source": "6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.2",
+    "parcel-bundler": "^1.11.0",
+    "prettier": "^1.15.3"
+  }
+}
