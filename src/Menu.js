@@ -1,8 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import {
-  Navbar,
-  NavbarToggler,
-  NavbarBrand } from 'reactstrap'
+import { Navbar, NavbarToggler, NavbarBrand } from 'reactstrap'
 
 export default class Menu extends Component {
   state = {
@@ -10,8 +7,10 @@ export default class Menu extends Component {
   }
 
   toggle = () => {
+    const { isOpen } = this.state
+
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !isOpen,
     })
   }
 
@@ -23,6 +22,6 @@ export default class Menu extends Component {
           <NavbarToggler onClick={this.toggle} />
         </Navbar>
       </Fragment>
-    );
+    )
   }
 }

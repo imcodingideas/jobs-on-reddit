@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
-
-import Menu from '../components/Menu'
+import PropTypes from 'prop-types'
+import Menu from './Menu'
 
 export default class Main extends Component {
   render() {
@@ -9,11 +9,13 @@ export default class Main extends Component {
       <Fragment>
         <Menu />
         <div className="app-body">
-          <div className="container-fluid py-3">
-            {children}
-          </div>
+          <div className="container py-3">{children}</div>
         </div>
       </Fragment>
     )
   }
+}
+
+Main.propTypes = {
+  children: PropTypes.element.isRequired,
 }
