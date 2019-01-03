@@ -1,15 +1,26 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, CardBody, Button, CardTitle, CardText } from 'reactstrap'
 
-const Job = props => (
-  <Fragment>
-    <p>
-      <h5>{props.title}</h5> - by {props.author}
-    </p>
-    <p>
-      <a href={props.url}>{props.title}</a>
-    </p>
-    <hr />
-  </Fragment>
-)
+const Job = props => {
+  const { key, title, author } = props
+
+  return (
+    <Card key={key}>
+      <CardBody>
+        <CardTitle>{title}</CardTitle>
+        <CardText>By - {author}</CardText>
+
+        <Button>Job Link</Button>
+      </CardBody>
+    </Card>
+  )
+}
+
+Job.propTypes = {
+  key: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+}
 
 export default Job
