@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { CardColumns, Col, Row } from 'reactstrap'
-import Job from './Job'
+import Job from '../components/Job'
 
 const JOB_LIST_FEED = 'https://www.reddit.com/r/forhire.json'
 export default class JobsList extends Component {

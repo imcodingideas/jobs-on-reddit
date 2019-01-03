@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Container } from 'reactstrap'
-import Menu from './Menu'
+import Menu from '../components/Menu'
 
 const Main = props => {
   const { children } = props
