@@ -16,7 +16,7 @@ export default class JobsList extends Component {
     fetch(JOB_LIST_FEED)
       .then(response => response.json())
       .then(response => response.data.children.map(listing => listing.data))
-      .then(el => el.filter(word => word.title.includes('[Hiring]')))
+      .then(el => el.filter(word => word.title.toLowerCase().includes('hiring')))
       .then(job => {
         this.setState({
           jobs: job,
