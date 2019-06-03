@@ -1,22 +1,21 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import { Container } from 'reactstrap'
-import Menu from '../components/Menu'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Menu from '../components/Menu';
 
 const Main = props => {
-  const { children } = props
+  const { children } = props;
 
   return (
-    <Fragment>
+    <>
       <Menu />
 
-      <Container className="py-3">{children}</Container>
-    </Fragment>
-  )
-}
+      <div className="container mx-auto px-4">{children}</div>
+    </>
+  );
+};
 
 Main.propTypes = {
   children: PropTypes.element.isRequired,
-}
+};
 
-export default Main
+export default Main;

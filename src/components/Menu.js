@@ -1,14 +1,15 @@
-import React, { Fragment } from 'react'
-import { Navbar, Container, NavbarBrand } from 'reactstrap'
+import React from 'react';
 
 const Menu = () => (
-  <Fragment>
-    <Navbar color="dark" dark expand="md">
-      <Container>
-        <NavbarBrand href="/">Reddit [HIRING] Jobs</NavbarBrand>
-      </Container>
-    </Navbar>
-  </Fragment>
-)
+  <>
+    <nav className="flex items-center justify-between flex-wrap bg-gray-100 p-6 mb-4">
+      <div className="flex items-center flex-shrink-0 text-black">
+        <span className="font-semibold text-xl tracking-tight">
+          Reddit [HIRING] Jobs
+        </span>
+      </div>
+    </nav>
+  </>
+);
 
-export default Menu
+export default Menu;

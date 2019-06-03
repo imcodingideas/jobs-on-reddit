@@ -1,11 +1,11 @@
-import React from 'react'
-import ReactDom from 'react-dom'
-import { Router } from '@reach/router'
+import React from 'react';
+import ReactDom from 'react-dom';
+import { Router } from '@reach/router';
 
-import Main from './container/Main'
-import JobsList from './jobs/List'
+import Main from './container/Main';
+import JobsList from './jobs/List';
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+import './css/tailwind.css';
 
 const App = () => (
   <Router>
@@ -13,6 +13,6 @@ const App = () => (
       <JobsList path="/" />
     </Main>
   </Router>
-)
+);
 
-ReactDom.render(<App />, document.getElementById('root'))
+ReactDom.render(<App />, document.getElementById('root'));
