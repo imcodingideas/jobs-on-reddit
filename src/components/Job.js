@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Job = props => {
-  const { key, title, author, url } = props;
+  const { title, author, url } = props;
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg mb-6" key={key}>
+    <div className="max-w-sm rounded overflow-hidden shadow-lg mb-6">
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
         <p className="text-gray-700 text-base">By - {author}</p>
@@ -26,7 +26,6 @@ const Job = props => {
 };
 
 Job.propTypes = {
-  key: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,

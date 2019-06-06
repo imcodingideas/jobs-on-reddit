@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
+import API from '../../utils/API';
 import Job from '../components/Job';
-
-const JOB_LIST_FEED = 'https://www.reddit.com/r/forhire.json';
 
 export default class JobsList extends Component {
   constructor(props) {
@@ -12,22 +12,27 @@ export default class JobsList extends Component {
     this.fetchJobs = this.fetchJobs.bind(this);
   }
 
-  componentDidMount() {
-    this.fetchJobs();
+  async componentDidMount() {
+    await this.fetchJobs();
   }
 
-  fetchJobs() {
-    fetch(JOB_LIST_FEED)
-      .then(response => response.json())
-      .then(response => response.data.children.map(listing => listing.data))
-      .then(el =>
-        el.filter(word => word.title.toLowerCase().includes('hiring'))
-      )
-      .then(job => {
-        this.setState({
-          jobs: job,
-        });
+  async fetchJobs() {
+    try {
+      const forHire = await API.get('/forhire.json');
+      const jobbit = await API.get('/jobbit.json');
+      const data = { ...forHire, ...jobbit };
+
+      const jobs = data.data.data.children
+        .map(listing => listing.data)
+        .filter(word => word.title.toLowerCase().includes('hiring'));
+
+      this.setState({
+        jobs,
       });
+    } catch (e) {
+      // handle error, for real later.
+      console.log(e);
+    }
   }
 
   render() {
@@ -38,7 +43,7 @@ export default class JobsList extends Component {
         {jobs.map(job => (
           <Job
             author={job.author}
-            key={job.id}
+            key={uuid()}
             title={job.title}
             url={job.url}
           />
