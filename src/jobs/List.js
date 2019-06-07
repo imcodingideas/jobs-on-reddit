@@ -4,13 +4,9 @@ import API from '../../utils/API';
 import Job from '../components/Job';
 
 export default class JobsList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      jobs: [],
-    };
-    this.fetchJobs = this.fetchJobs.bind(this);
-  }
+  state = {
+    jobs: [],
+  };
 
   async componentDidMount() {
     await this.fetchJobs();
@@ -19,10 +15,8 @@ export default class JobsList extends Component {
   async fetchJobs() {
     try {
       const forHire = await API.get('/forhire.json');
-      const jobbit = await API.get('/jobbit.json');
-      const data = { ...forHire, ...jobbit };
 
-      const jobs = data.data.data.children
+      const jobs = forHire.data.data.children
         .map(listing => listing.data)
         .filter(word => word.title.toLowerCase().includes('hiring'));
 
