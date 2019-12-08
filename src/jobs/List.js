@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import uuid from 'uuid';
-import API from '../../utils/API';
+import API from '../utils/API';
 import Job from '../components/Job';
 
 const JobsList = () => {
