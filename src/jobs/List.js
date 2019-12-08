@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import uuid from 'uuid';
 import API from '../utils/API';
-import Job from '../components/Job';
+import JobItem from './Item';
 
 const JobsList = () => {
   const [jobs, setJobs] = useState([]);
@@ -21,11 +21,32 @@ const JobsList = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-between sm:w-full md:w-full">
-      {jobs.map(job => (
-        <Job author={job.author} key={uuid()} title={job.title} url={job.url} />
-      ))}
-    </div>
+    <table className="table-fixed">
+      <thead>
+        <tr>
+          <th className="w-1/2 px-4 py-2">Title</th>
+          <th className="w-1/4 px-4 py-2">Author</th>
+          <th className="w-1/4 px-4 py-2">URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        {jobs.map((job, i) => {
+          function isEven(n) {
+            return n % 2 === 0;
+          }
+
+          return (
+            <JobItem
+              author={job.author}
+              isStripped={isEven(i)}
+              key={uuid()}
+              title={job.title}
+              url={job.url}
+            />
+          );
+        })}
+      </tbody>
+    </table>
   );
 };
 
