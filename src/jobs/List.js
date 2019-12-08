@@ -7,7 +7,7 @@ const JobsList = () => {
   const [jobs, setJobs] = useState([]);
 
   const fetchJobs = async () => {
-    const forHire = await API.get('/forhire.json');
+    const forHire = await API.get('/forhire.json?limit=100&count=100');
 
     const fetchedJobs = forHire.data.data.children
       .map(listing => listing.data)
